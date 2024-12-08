@@ -24,15 +24,15 @@ def initialize_database():    # Verbindung zur SQLite-Datenbank
         )
         """)
 
-        conn.commit()
-        conn.close()
+        conn.commit() # Changes speichern
+        conn.close() # Verbindung beenden
 
-        print("Die Datenbank wurde neu erstellt.")
+        print("Die Datenbank wurde neu erstellt.") # Wenn die Aktion durchgeführt wurde
         return True
     else:
 
-        print("Die Datenbank existiert bereits und wird verwendet.")
-
+        print("Die Datenbank existiert bereits und wird verwendet.") # Wenn die neue DB-Datei nicht erstellt wurde
+        return False
 
 if __name__ == "__main__":
     initialize_database()
